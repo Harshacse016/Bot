@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+<body>
+
+  <div id="main">
+
+    <h1>
+      <center> WELCOME TO VOICE SPEECH CHATBOT SYSTEM </center>
+    </h1>
+  
+    <h3> <marquee behavior="alternate" direction="left" scrollamount="5"> YOU CAN ASCESS YOU'R SYSTEM WITH VOICE </marquee> </h3>
+  
+    <hr>
+  
+  </div>
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>  
+  <a href="#"><i class="fa fa-fw fa-envelope"></i> Contact</a>
+  {% if user.is_authenticated %}
+  <a><i class="fa fa-fw fa-user"></i> {{user.username}} </a> 
+  <a href="logout"><i class="fa fa-sign-out"></i> Logout</a>
+  {% else %}
+  <a href="login"><i class="fa fa-fw fa-user"></i> Login</a>
+  <a href="register"><i class="fa fa-user-plus"></i> Register</a>
+  {% endif %}
+</div>
+
+<div>
+    <br>
+    <br>
+    <center> <img src= "/media/pics/home_mic.jfif" alt="" width="900" height="400" > </center>
+
+    <br>
+    <br>
+
+    <center><font size="+2"> <h1> MEET CHATBOT </h1> </font> </center>
+
+    <br>
+    <br>
+
+    <center> <h1> ABOUT ME </h1> </center>
+
+    <br>
+    <br>
+
+    <center>
+      <font size = "+1">
+      <p>
+        Hi, Guys I am Bot you can use me with your VOICE by just clicking on the mic button it will appear, <br>
+        when you login to this site. I can do operations which are related to the COMPUTER/PC you can just  <br>
+        handle with your VOICE. Example - If you want to open an app or file then just say <br>
+        "open file_name" or "open app".
+      </p>
+      </font>
+    </center>
+</div>
+
+<div>
+  {% if user.is_authenticated %}
+  <div>
+    <br>
+    <br>
+    <center> <a href="on_mic"> <img src= "/media/pics/mic.gif" alt="" width="300" height="300" > </a> </center>
+  </div>
+  {% endif %}
+</div>
+
+</body>
+</html> 
